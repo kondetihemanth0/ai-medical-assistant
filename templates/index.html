@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Medical Assistant Bot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>🩺 AI Medical Assistant Bot</h1>
+
+    <div class="disclaimer">
+        <b>Disclaimer:</b><br>
+        This AI Medical Assistant is intended for educational purposes only.
+        It is not a substitute for professional medical advice, diagnosis, or treatment.
+    </div>
+
+    <form method="POST" enctype="multipart/form-data">
+
+        <label>Enter Symptoms</label>
+        <textarea name="symptoms" placeholder="Describe your symptoms..."></textarea>
+
+        <label>Upload Medical Report (PDF)</label>
+        <input type="file" name="report">
+
+        <button type="submit">Analyze</button>
+
+    </form>
+
+    {% if result %}
+    <div class="response">
+        <h3>AI Response</h3>
+        <p>{{ result }}</p>
+    </div>
+    {% endif %}
+
+    <div class="privacy">
+        <b>Privacy Notice:</b><br>
+        Uploaded reports are used only for analysis.
+    </div>
+
+</div>
+
+</body>
+</html>
