@@ -3,3 +3,4 @@ gunicorn
 google-generativeai
 grpcio
 protobuf
+PyPDF2
